@@ -272,6 +272,14 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
 .bstp.active .bl{color:#fff !important;opacity:1}
 .bstp.done:not(.active){color:var(--green)}
 
+/* Bottom Nav Hiding Utility */
+.bnav-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 40px) scale(0.9);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* ≤768: shrink horizontal padding */
 @media(max-width:768px){
   .bnav{height:64px; bottom:12px; border-radius:18px}
@@ -1162,7 +1170,7 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
             <div class="prog-tr2"><div class="prog-in" id="vu-bar"></div></div>
             <p class="prog-pct" id="vu-pct">0%</p>
           </div>
-          <button class="btn btn-p btn-wide" id="btn-vu" onclick="goTo(4)" disabled>See My Health Summary →</button>
+          <button class="btn btn-p btn-wide" id="btn-vu" onclick="goTo(4)" disabled style="height:62px; font-size:18px; font-weight:800; box-shadow:0 8px 24px rgba(26,86,219,0.3); margin-top:var(--ig)">See My Health Summary →</button>
         </div>
       </div>
     </div>
@@ -1460,6 +1468,16 @@ function goTo(n){
   if(n===3)startVU();
   if(n===5){curData=CONSULT;renderClinics(curData,curBudget);updateBudgetUI(curBudget);}
   window.scrollTo({top:0,behavior:'smooth'});
+
+  // Manage Bottom Nav Prominence/Visibility
+  const bnav = document.querySelector('.bnav');
+  if(bnav) {
+    if(n === 3 || n === 4) {
+      bnav.classList.add('bnav-hidden');
+    } else {
+      bnav.classList.remove('bnav-hidden');
+    }
+  }
 }
 function updateNav(n){
   document.querySelectorAll('.bstp').forEach((s,i)=>{
