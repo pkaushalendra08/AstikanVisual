@@ -263,22 +263,15 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
 .bstp.active{
   background:var(--blue);
   color:#fff !important;
-  transform:translateY(-8px);
-  box-shadow:0 8px 24px rgba(26, 86, 219, 0.35);
+  transform:translateY(-4px) scale(0.75);
+  box-shadow:0 3px 8px rgba(26, 86, 219, 0.15);
 }
 .bstp.active .bi, .bstp.active .bl{color:#fff !important}
 .bstp .bi{font-size:22px;line-height:1;margin-bottom:2px}
 .bstp .bl{font-size:12px;white-space:nowrap;line-height:1;font-weight:800;color:inherit}
 .bstp.active .bl{color:#fff !important;opacity:1}
 .bstp.done:not(.active){color:var(--green)}
-
-/* Bottom Nav Hiding Utility */
-.bnav-hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, 40px) scale(0.9);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
+.bstp:not(.active) .bl{opacity:0.4; font-weight:600}
 
 /* ≤768: shrink horizontal padding */
 @media(max-width:768px){
@@ -576,36 +569,44 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
    ╚════════════════════════════════════════════════════ */
 .hs-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gg);align-items:start}
 .hs-tt{font-size:var(--tx-2xl);font-weight:900;line-height:1.2;margin-bottom:var(--cg)}
-.diag-row{display:flex;justify-content:space-between;align-items:center;gap:var(--ig)}
-.diag-nm{font-size:var(--tx-xl);font-weight:800;color:var(--t1)}
-.ctag{display:inline-block;background:var(--greenbg);color:var(--green);border-radius:20px;padding:4px 12px;font-size:var(--tx-xs);font-weight:700;margin-top:6px}
-.sev-row{display:flex;align-items:center;gap:var(--ig);margin-bottom:var(--ig)}
-.sev-b{border-radius:20px;padding:6px 14px;font-size:var(--tx-base);font-weight:700}
-.sev-mild{background:#FEF9C3;color:#92400E}
-.sev-note{font-size:var(--tx-sm);color:var(--t3);margin-bottom:var(--cg)}
-.meter{height:8px;border-radius:4px;overflow:hidden;position:relative;background:linear-gradient(90deg,#22C55E,#FBBF24,#EF4444)}
-.meter-ptr{height:100%;width:30%;background:transparent;border-right:3px solid #111;position:absolute}
-.meter-lbs{display:flex;justify-content:space-between;font-size:var(--tx-xs);color:var(--t3);margin-top:4px}
+.diag-row{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:2px}
+.diag-nm{font-size:clamp(32px, 6vw, 48px);font-weight:900;color:var(--t1);line-height:1.05;letter-spacing:-0.5px}
+.ctag{display:inline-flex;align-items:center;background:#DCFCE7;color:#166534;border-radius:20px;padding:6px 16px;font-size:13px;font-weight:700}
+.sev-row{display:flex;align-items:center;gap:14px}
+.sev-chip{background:#FEF9C3;color:#854D0E;border-radius:6px;padding:4px 12px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.sev-desc{font-size:var(--tx-sm);color:var(--t2);line-height:1.5;margin:0}
 .act-li{display:flex;flex-direction:column;gap:var(--ig)}
 .act-li li{display:flex;align-items:flex-start;gap:var(--ig);font-size:var(--tx-sm);color:var(--t2);line-height:1.5}
 .chk{width:20px;height:20px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;
   display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.hs-rp{display:flex;flex-direction:column;gap:var(--cg)}
+.hs-rp{display:flex;flex-direction:column;gap:12px}
 .hs-ai{display:flex;align-items:flex-start;gap:var(--cp-s);background:linear-gradient(135deg,var(--bluebg),#F0F8FF);
   border-radius:var(--r3);padding:var(--cp-s);border:1px solid rgba(59,130,246,.14);box-shadow:var(--sh0)}
 .hs-ai-msg{font-size:var(--tx-sm);color:var(--t2);line-height:1.7;font-style:italic}
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--ig)}
-.stat-b{background:var(--white);border-radius:var(--r3);padding:var(--cp-s) var(--ig);
-  border:1px solid var(--border);box-shadow:var(--sh0);text-align:center;
-  display:flex;flex-direction:column;align-items:center;gap:4px}
-.stat-n{font-size:clamp(15px,2vw,22px);font-weight:800;color:var(--blue)}
-.stat-l{font-size:var(--tx-xs);color:var(--t3)}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:var(--ig)}
+.stat-b{background:#FAFAFB;border-radius:var(--r2);padding:4px 2px;
+  border:1.5px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,0.02);text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:0}
+.stat-n{font-size:16px;font-weight:800;color:var(--blue)}
+.stat-l{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:0.3px;font-weight:600;opacity:0.7}
 .tl-card{background:var(--white);border-radius:var(--r3);padding:var(--cp-s);border:1px solid var(--border);box-shadow:var(--sh0)}
 .tl-steps{display:flex;flex-direction:column;gap:var(--cg);padding-left:4px;margin-top:var(--ig)}
 .tl-s{display:flex;align-items:center;gap:var(--ig);padding-left:14px;
   border-left:2px solid var(--border);position:relative;padding-bottom:4px}
 .tl-s.on{border-left-color:var(--blue)}
 .tl-dot{width:12px;height:12px;border-radius:50%;background:var(--border);position:absolute;left:-7px}
+
+/* Reassurance Card */
+.re-card{
+  background:var(--bluebg);
+  border-radius:var(--r3);
+  padding:24px;
+  margin-bottom:var(--gg);
+  border-left:5px solid var(--blue);
+  box-shadow:0 1px 3px rgba(0,0,0,0.05);
+}
+.re-tt{font-size:19px; font-weight:800; color:var(--t1); margin-bottom:8px; display:block}
+.re-ms{font-size:16px; font-weight:500; color:var(--t2); line-height:1.6; display:block}
 .tl-s.on .tl-dot{background:var(--blue)}
 .tl-t{font-size:var(--tx-sm);color:var(--t2)}
 .tl-s.on .tl-t{font-weight:700;color:var(--blue)}
@@ -826,8 +827,8 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
   /* 1-col options */
   .opts{grid-template-columns:1fr;gap:var(--ig)}
   .sq-card{padding:var(--cp-s)}
-  /* Screen 4 */
-  .stat-row{grid-template-columns:1fr 1fr}
+  /* Screen 4 stays 3-col */
+  .stat-row{grid-template-columns:repeat(3,1fr)}
   /* Screen 5 */
   .bgt-wrap{padding:var(--cp-s)}
   /* Screen 6 */
@@ -841,8 +842,8 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
   .sq-card{padding:12px}
   .opts{gap:8px}
   .opt{min-height:50px;padding:10px 11px}
-  /* Stats single col */
-  .stat-row{grid-template-columns:1fr}
+  /* Stats stay 3-col */
+  .stat-row{grid-template-columns:repeat(3,1fr)}
   /* Nav */
   .bstp{padding:2px 4px;min-width:34px}
   .bstp .bi{font-size:16px}
@@ -1170,7 +1171,7 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
             <div class="prog-tr2"><div class="prog-in" id="vu-bar"></div></div>
             <p class="prog-pct" id="vu-pct">0%</p>
           </div>
-          <button class="btn btn-p btn-wide" id="btn-vu" onclick="goTo(4)" disabled style="height:62px; font-size:18px; font-weight:800; box-shadow:0 8px 24px rgba(26,86,219,0.3); margin-top:var(--ig)">See My Health Summary →</button>
+          <button class="btn btn-p btn-wide" id="btn-vu" onclick="goTo(4)" disabled>See My Health Summary →</button>
         </div>
       </div>
     </div>
@@ -1180,63 +1181,79 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
 <!-- ══════════ SCREEN 4 — HEALTH SUMMARY ══════════ -->
 <section class="screen" id="s4">
   <div class="pg">
-    <div class="hs-grid">
-      <div>
-        <div class="tag-pill">YOUR HEALTH SUMMARY</div>
-        <h2 class="hs-tt">Here's Your <span class="go">Health Snapshot</span></h2>
-        <div class="card">
-          <span class="lbl">Most Likely Cause</span>
-          <div class="diag-row">
-            <div><p class="diag-nm">Acidity / Gastritis</p><span class="ctag">Common &amp; Treatable</span></div>
-            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="58" style="flex-shrink:0">
+      <div class="tag-pill">YOUR HEALTH SUMMARY</div>
+      <h2 class="hs-tt">Here's Your <span class="go">Health Snapshot</span></h2>
+
+      <div class="hs-grid">
+        <div>
+          <!-- 1. Diagnosis -->
+        <div class="card" style="padding:14px var(--cp); background:linear-gradient(135deg, #fff, #f8faff); border:1.5px solid var(--bluebg); min-height:130px; display:flex; flex-direction:column; justify-content:center; margin-bottom:10px">
+          <span class="lbl" style="margin-bottom:6px">Most Likely Cause</span>
+          <div class="diag-row" style="flex-direction:row; align-items:center; justify-content:space-between">
+            <div style="display:flex; flex-direction:column; gap:4px">
+              <p class="diag-nm" style="font-size:clamp(28px, 5vw, 42px)">Acidity / Gastritis</p>
+              <span class="ctag" style="width:fit-content; padding:2px 10px; font-size:11px">Common &amp; Treatable</span>
+            </div>
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="54" style="flex-shrink:0">
               <ellipse cx="40" cy="45" rx="28" ry="24" fill="#FF8A65"/><ellipse cx="35" cy="38" rx="22" ry="20" fill="#FFA07A"/>
               <path d="M22 35 Q28 25 38 28 Q50 22 55 35 Q58 45 50 52 Q42 58 32 54 Q22 50 22 40Z" fill="#FF7043" opacity="0.7"/>
-              <text x="40" y="48" text-anchor="middle" font-size="18">🔥</text>
+              <text x="40" y="48" text-anchor="middle" font-size="20">🔥</text>
             </svg>
           </div>
         </div>
-        <div class="card">
-          <span class="lbl">Severity</span>
-          <div class="sev-row"><span class="sev-b sev-mild">Mild 🟡</span></div>
-          <p class="sev-note">Usually improves with the right medicine &amp; care.</p>
-          <div class="meter"><div class="meter-ptr"></div></div>
-          <div class="meter-lbs"><span>Mild</span><span>Moderate</span><span>Severe</span></div>
+
+        <!-- 2. Condensed Analysis -->
+        <div class="card" style="margin-bottom:10px; padding:8px 16px; border-left:4px solid var(--blue); background:rgba(59,130,246,0.02)">
+          <div style="display:flex; align-items:center; gap:12px">
+            <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" width="30" style="flex-shrink:0">
+              <ellipse cx="50" cy="72" rx="33" ry="28" fill="#5B8DEF"/><ellipse cx="50" cy="45" rx="26" ry="25" fill="#7BA7F7"/>
+              <ellipse cx="41" cy="40" rx="5" ry="6" fill="white"/><ellipse cx="59" cy="40" rx="5" ry="6" fill="white"/>
+              <circle cx="42" cy="42" r="2.5" fill="#1a3a6b"/><circle cx="60" cy="42" r="2.5" fill="#1a3a6b"/>
+              <path d="M43 53 Q50 59 57 53" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            </svg>
+            <p style="font-size:13.5px; color:var(--t2); line-height:1.4; font-weight:500; margin:0">Your symptoms most likely indicate mild acidity or gastritis. This is common, treatable, and usually improves within 2–3 days.</p>
+          </div>
         </div>
-        <div class="card">
+
+        <!-- 3. Actions -->
+        <div class="card" style="margin-bottom:0; padding-bottom:12px">
           <span class="lbl">What You Should Do</span>
-          <ul class="act-li">
+          <ul class="act-li" style="margin-top:8px">
             <li><span class="chk">✓</span>Consult a General Physician</li>
-            <li><span class="chk">✓</span>Get checked if it continues for 2–3 days</li>
             <li><span class="chk">✓</span>Avoid spicy &amp; oily food</li>
             <li><span class="chk">✓</span>Take OTC antacids for temporary relief</li>
           </ul>
+          <p style="font-size:11px; color:var(--t3); margin-top:8px; font-style:italic; opacity:0.8">Note: Get checked if it continues for more than 2–3 days.</p>
         </div>
       </div>
+
       <div class="hs-rp">
-        <div class="hs-ai">
-          <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" width="52" style="flex-shrink:0">
-            <ellipse cx="50" cy="72" rx="33" ry="28" fill="#5B8DEF"/><ellipse cx="50" cy="45" rx="26" ry="25" fill="#7BA7F7"/>
-            <ellipse cx="41" cy="40" rx="5" ry="6" fill="white"/><ellipse cx="59" cy="40" rx="5" ry="6" fill="white"/>
-            <circle cx="42" cy="42" r="2.5" fill="#1a3a6b"/><circle cx="60" cy="42" r="2.5" fill="#1a3a6b"/>
-            <path d="M43 53 Q50 59 57 53" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            <text x="50" y="82" text-anchor="middle" font-size="16" font-weight="bold" fill="white" font-family="Nunito">A</text>
-          </svg>
-          <p class="hs-ai-msg">"Rohit, this looks like mild Acidity/Gastritis. It's very treatable! Let me find affordable care nearby."</p>
-        </div>
-        <div class="stat-row">
-          <div class="stat-b"><span class="stat-n bl">95%</span><span class="stat-l">Match Confidence</span></div>
-          <div class="stat-b"><span class="stat-n bl">2-3</span><span class="stat-l">Days Recovery</span></div>
-          <div class="stat-b"><span class="stat-n bl">₹300</span><span class="stat-l">Avg. Consult</span></div>
-        </div>
-        <div class="tl-card">
-          <span class="lbl">Recovery Timeline</span>
-          <div class="tl-steps">
-            <div class="tl-s on"><div class="tl-dot"></div><p class="tl-t">Day 1 – Consult doctor</p></div>
-            <div class="tl-s"><div class="tl-dot"></div><p class="tl-t">Day 1-2 – Start medication</p></div>
-            <div class="tl-s"><div class="tl-dot"></div><p class="tl-t">Day 3 – Feeling much better</p></div>
+        <!-- 5. Severity (Minimized) -->
+        <div class="card" style="padding:12px var(--ig); margin-bottom:0; display:flex; flex-direction:column; justify-content:center; min-height:64px">
+          <span class="lbl" style="margin-bottom:4px">Severity Level</span>
+          <div class="sev-row" style="margin-top:0; align-items:center">
+            <span class="sev-chip" style="padding:3px 12px">Mild</span>
+            <p class="sev-desc">Typically resolves in 2–3 days.</p>
           </div>
         </div>
-        <button class="btn btn-p btn-wide" onclick="goTo(5)">See Best &amp; Affordable Options →</button>
+
+        <!-- 6. Timeline (Minimized) -->
+        <div class="tl-card" style="padding:12px var(--ig)">
+          <span class="lbl">Recovery Timeline</span>
+          <div class="tl-steps" style="margin-top:8px; gap:8px">
+            <div class="tl-s on" style="padding-bottom:10px"><div class="tl-dot"></div><p class="tl-t">Day 1: Consult doctor</p></div>
+            <div class="tl-s" style="padding-bottom:10px"><div class="tl-dot"></div><p class="tl-t">Day 1–2: Start medication</p></div>
+            <div class="tl-s" style="padding-bottom:0"><div class="tl-dot"></div><p class="tl-t">Day 3: Feeling much better</p></div>
+          </div>
+        </div>
+
+        <!-- 7. Stats (Minimized) -->
+        <div class="stat-row" style="margin-top:0">
+          <div class="stat-b"><span class="stat-n">95%</span><span class="stat-l">Match</span></div>
+          <div class="stat-b"><span class="stat-n">2-3</span><span class="stat-l">Days</span></div>
+          <div class="stat-b"><span class="stat-n">₹300</span><span class="stat-l">Cost</span></div>
+        </div>
+        <button class="btn btn-p btn-wide" onclick="goTo(5)" style="height:62px; font-size:18px; font-weight:800; box-shadow:0 8px 25px rgba(26,86,219,0.3); margin-top:auto">Find Affordable Care Near Me →</button>
       </div>
     </div>
   </div>
@@ -1468,16 +1485,6 @@ function goTo(n){
   if(n===3)startVU();
   if(n===5){curData=CONSULT;renderClinics(curData,curBudget);updateBudgetUI(curBudget);}
   window.scrollTo({top:0,behavior:'smooth'});
-
-  // Manage Bottom Nav Prominence/Visibility
-  const bnav = document.querySelector('.bnav');
-  if(bnav) {
-    if(n === 3 || n === 4) {
-      bnav.classList.add('bnav-hidden');
-    } else {
-      bnav.classList.remove('bnav-hidden');
-    }
-  }
 }
 function updateNav(n){
   document.querySelectorAll('.bstp').forEach((s,i)=>{
