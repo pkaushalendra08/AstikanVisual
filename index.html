@@ -263,8 +263,8 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
 .bstp.active{
   background:var(--blue);
   color:#fff !important;
-  transform:translateY(-4px) scale(0.75);
-  box-shadow:0 3px 8px rgba(26, 86, 219, 0.15);
+  transform:translateY(-8px) scale(1.05);
+  box-shadow:0 8px 25px rgba(26, 86, 219, 0.35);
 }
 .bstp.active .bi, .bstp.active .bl{color:#fff !important}
 .bstp .bi{font-size:22px;line-height:1;margin-bottom:2px}
@@ -614,6 +614,13 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
 /* ╔════════════════════════════════════════════════════
    ║  SCREEN 5 — COST ANALYZER
    ╚════════════════════════════════════════════════════ */
+.ps-banner{background:linear-gradient(135deg,#fff,#f8faff);border-radius:var(--r3);padding:10px var(--ig);
+  display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--bluebg);margin-bottom:var(--ig);box-shadow:var(--sh0)}
+.ps-diag-name{font-size:18px;font-weight:900;color:var(--t1);margin-bottom:2px}
+.ps-diag-sub{font-size:12px;color:var(--t3);font-weight:600}
+.ps-sev-val{font-size:13px;font-weight:800;background:var(--orangebg);padding:2px 10px;border-radius:20px;color:#92400E}
+.ps-conf{font-size:12px;color:var(--blue);font-weight:800}
+
 .ca-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gg);align-items:start}
 .ca-tt{font-size:var(--tx-2xl);font-weight:900;margin-bottom:var(--cg)}
 .ca-loc{display:flex;align-items:center;gap:8px;font-size:var(--tx-sm);color:var(--t2);margin-bottom:var(--cg)}
@@ -624,20 +631,18 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
   border:1px solid var(--border);width:fit-content;flex-wrap:wrap}
 .tab{padding:9px 16px;font-size:var(--tx-sm);font-weight:600;background:var(--white);color:var(--t3);cursor:pointer;transition:all .2s}
 .tab.active{background:var(--blue);color:#fff}
-.tip-b{display:flex;align-items:center;gap:8px;background:var(--orangebg);border-radius:var(--r2);
-  padding:var(--ig) var(--cp-s);font-size:var(--tx-sm);color:#92400E;margin-bottom:var(--cg);border:1px solid #FDE68A}
+.tip-b{display:none}
 
 /* Budget Slider */
 .bgt-wrap{
   background:linear-gradient(135deg,var(--bluebg),#F0F8FF);
-  border-radius:var(--r4);padding:var(--cp);
-  border:1px solid rgba(59,130,246,.15);box-shadow:var(--sh1);margin-bottom:var(--cg);
+  border-radius:var(--r4);padding:var(--cp-s);
+  border:1px solid rgba(59,130,246,.15);box-shadow:var(--sh0);margin-bottom:var(--cg);
 }
-.bgt-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:var(--cg)}
-.bgt-title{font-size:var(--tx-base);font-weight:700;color:var(--t1)}
-.bgt-note{font-size:var(--tx-xs);color:var(--t3);margin-top:2px}
+.bgt-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px}
+.bgt-title{font-size:15px;font-weight:700;color:var(--t1)}
 .bgt-vbox{display:flex;align-items:baseline;gap:4px}
-.bgt-val{font-size:clamp(22px,2.8vw,30px);font-weight:900;color:var(--blue);font-family:'Nunito',sans-serif;line-height:1}
+.bgt-val{font-size:22px;font-weight:900;color:var(--blue);font-family:'Nunito',sans-serif;line-height:1}
 .bgt-sub{font-size:var(--tx-xs);color:var(--t3)}
 .bgt-range{
   -webkit-appearance:none;appearance:none;
@@ -660,27 +665,16 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
 .bgt-tag:hover,.bgt-tag.on{background:var(--blue);color:#fff;border-color:var(--blue)}
 
 /* Clinic cards */
-.cl-list{display:flex;flex-direction:column;gap:var(--cg)}
-.cl-card{background:var(--white);border-radius:var(--r3);padding:var(--cp-s) var(--cp);
-  border:1px solid var(--border);box-shadow:var(--sh0);position:relative;overflow:hidden;
-  transition:all .3s;margin:0}
-.cl-card:hover{box-shadow:var(--sh2);transform:translateY(-2px)}
-.cl-card.bv{border-color:var(--green)}
-.cl-card.over{opacity:.42;filter:grayscale(.35)}
-.ov-tag{display:none;position:absolute;top:8px;left:8px;background:#FEF3C7;color:#92400E;
-  border-radius:var(--r1);padding:3px 8px;font-size:10px;font-weight:700;border:1px solid #FDE68A}
-.cl-card.over .ov-tag{display:block}
-.bv-tag{position:absolute;top:0;right:0;background:var(--green);color:#fff;font-size:10px;font-weight:800;letter-spacing:.8px;padding:3px 10px;border-bottom-left-radius:var(--r2)}
-.cl-row{display:flex;align-items:center;gap:var(--cp-s)}
-.cl-av{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0}
-.av1{background:linear-gradient(135deg,#1A56DB,#60A5FA)}.av2{background:linear-gradient(135deg,#059669,#34D399)}.av3{background:linear-gradient(135deg,#7C3AED,#A78BFA)}
-.cl-inf{flex:1;min-width:0}
-.cl-nm{font-size:var(--tx-base);font-weight:700;color:var(--t1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.cl-dt{font-size:var(--tx-xs);color:var(--t3);margin:2px 0}
-.cl-st{font-size:var(--tx-xs);color:var(--t3)}
-.cl-price{text-align:right;flex-shrink:0}
-.pnew{font-size:var(--tx-lg);font-weight:800;color:var(--green)}
-.pold{font-size:var(--tx-xs);color:var(--t3);text-decoration:line-through}
+.cl-list{display:flex;flex-direction:column;gap:var(--ig)}
+.cl-card{padding:12px var(--ig);border-radius:var(--r3);background:#fff;border:1px solid var(--border);transition:all 0.3s;position:relative}
+.cl-card:hover{transform:translateY(-2px);box-shadow:var(--sh1)}
+.cl-row{align-items:center;display:flex;gap:var(--ig)}
+.cl-nm{font-size:17px;font-weight:800;color:var(--t1)}
+.pnew{font-size:19px;font-weight:900;color:var(--blue);line-height:1}
+.pold{font-size:12px;color:var(--t3);text-decoration:line-through;margin-top:4px}
+.cl-dt{font-size:12px;color:var(--t3);font-weight:600}
+.cl-card.bv{border:2.5px solid #10B981;background:#F0FDF4;transform:scale(1.02);box-shadow:0 10px 30px rgba(16,185,129,0.15)}
+.bv-tag{background:#10B981;color:#fff;padding:3px 10px;font-size:10px;font-weight:900;letter-spacing:0.5px}
 /* Astikan save row */
 .ast-row{
   display:flex;align-items:center;gap:var(--ig);
@@ -693,29 +687,24 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
 .ast-badge{display:inline-block;background:var(--greenbg);color:var(--green);
   border-radius:20px;padding:3px 10px;font-size:var(--tx-xs);font-weight:800;flex-shrink:0;white-space:nowrap}
 
+.cl-card.over{opacity:0.4; filter:grayscale(1); order:2; pointer-events:none}
+.cl-card:not(.over){order:1}
+
+
 /* Right panel */
 .ca-rp{display:flex;flex-direction:column;gap:var(--cg)}
-.save-box{background:linear-gradient(135deg,var(--greenbg),#F0FDF4);border-radius:var(--r4);
-  padding:var(--cp);border:1px solid rgba(16,185,129,.2);text-align:center;box-shadow:var(--sh0)}
-.save-tt{font-size:var(--tx-sm);font-weight:700;color:var(--t2);margin-bottom:var(--ig)}
-.save-amt{font-size:clamp(24px,3.2vw,38px);font-weight:900;color:var(--green);font-family:'Nunito',sans-serif}
-.piggy-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:var(--ig);font-size:var(--tx-sm);color:var(--t3)}
-.bgt-sum{background:var(--white);border-radius:var(--r3);padding:var(--cp-s);border:1px solid rgba(16,185,129,.15);box-shadow:var(--sh0)}
-.bgt-sum-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.bgt-sum-lbl{font-size:var(--tx-xs);color:var(--t3);font-weight:600}
-.bgt-sum-val{font-size:var(--tx-md);font-weight:800;color:var(--green);font-family:'Nunito',sans-serif}
-.bs-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:6px}
-.bs-fill{height:100%;background:linear-gradient(90deg,var(--green),#34D399);border-radius:3px;transition:width .4s}
-.cmp-wrap{background:var(--white);border-radius:var(--r3);padding:var(--cp-s);border:1px solid var(--border);box-shadow:var(--sh0)}
-.cmp-tbl{width:100%;border-collapse:collapse;margin-top:var(--ig)}
-.cmp-tbl th{font-size:var(--tx-xs);font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--t3);padding:8px 10px;border-bottom:1px solid var(--border);text-align:left}
-.cmp-tbl td{padding:9px 10px;font-size:var(--tx-sm);color:var(--t2)}
-.cmp-tbl tr{border-bottom:1px solid var(--border)}.cmp-tbl tr:last-child{border-bottom:none}
-.cmp-tbl .rbe td{background:var(--greenbg);font-weight:700}
-.sg{color:var(--green);font-weight:700}
-.ca-ai{display:flex;align-items:center;gap:var(--cp-s);background:linear-gradient(135deg,var(--bluebg),#F0F8FF);
-  border-radius:var(--r3);padding:var(--cp-s);border:1px solid rgba(59,130,246,.14);box-shadow:var(--sh0)}
-.ca-ai-msg{font-size:var(--tx-sm);color:var(--t2);line-height:1.65;font-style:italic}
+.save-box{background:linear-gradient(135deg,#10B981,#059669);color:#fff;border-radius:var(--r3);padding:var(--ig) var(--cp);
+  display:flex;flex-direction:column;gap:4px;box-shadow:0 8px 24px rgba(16,185,129,0.2)}
+.save-amt{font-size:28px;font-weight:900;letter-spacing:-0.5px}
+.piggy-row{font-size:11px;opacity:0.9;font-weight:600}
+.bgt-mini{font-size:12px;font-weight:700;background:rgba(255,255,255,0.15);padding:6px 10px;border-radius:10px;margin-top:4px}
+
+.cmp-card{background:var(--white);padding:var(--cp-s);border-radius:var(--r3);border:1.5px dashed var(--bluebg);text-align:center}
+.cmp-best{font-size:13px;color:var(--t2);font-weight:600;display:flex;justify-content:center;gap:12px}
+.cmp-best strong{color:var(--blue);font-weight:900}
+
+.ca-ai{display:flex;align-items:center;gap:var(--ig);padding:var(--cp-s);border-radius:var(--r3)}
+.ca-ai-msg{font-size:13px;color:var(--t2);line-height:1.6}
 
 /* ╔════════════════════════════════════════════════════
    ║  SCREEN 6 — SMART PLAN
@@ -733,33 +722,35 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
 .nxt-card{background:var(--white);border-radius:var(--r3);padding:var(--cp-s);border:1px solid var(--border);box-shadow:var(--sh0)}
 .nxt-steps{display:flex;flex-direction:column;gap:var(--cg);margin-top:var(--ig)}
 .nxt-s{display:flex;align-items:center;gap:var(--cp-s);font-size:var(--tx-base);color:var(--t2);font-weight:500}
-.nxt-n{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue2));
-  color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.bye-box{display:flex;align-items:center;gap:var(--cp-s);background:linear-gradient(135deg,var(--bluebg),#F0F8FF);
-  border-radius:var(--r3);padding:var(--cp-s);border:1px solid rgba(59,130,246,.14);box-shadow:var(--sh0)}
-.bye-msg{font-size:var(--tx-base);color:var(--t2);line-height:1.6;font-style:italic}
-.sr-rp{display:flex;flex-direction:column;gap:var(--cg)}
-.rec-lbl{font-size:var(--tx-xs);font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--t3)}
-.rec-card{display:flex;align-items:center;gap:var(--cp-s);background:var(--white);border-radius:var(--r3);
-  padding:var(--cp-s) var(--cp);border:1px solid var(--border);box-shadow:var(--sh0);transition:all .2s}
-.rec-top{border-color:var(--blue);box-shadow:0 0 0 2px rgba(26,86,219,.1),var(--sh1)}
-.rec-av{width:44px;height:44px;border-radius:12px;flex-shrink:0;font-size:13px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center}
-.rec-inf{flex:1;min-width:0}
-.rec-nm{font-size:var(--tx-md);font-weight:800;color:var(--t1)}
-.rec-sub{font-size:var(--tx-xs);color:var(--t3);margin:2px 0}
-.rec-price{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border-radius:var(--r2);
-  padding:8px 14px;font-size:clamp(14px,1.7vw,18px);font-weight:900;font-family:'Nunito',sans-serif;flex-shrink:0}
-.why-box{background:var(--orangebg);border-radius:var(--r3);padding:var(--cp-s);border:1px solid #FDE68A}
-.why-t{font-size:var(--tx-xs);font-weight:700;color:#92400E;margin-bottom:4px}
-.why-p{font-size:var(--tx-sm);color:#92400E}
-.alts{background:var(--white);border-radius:var(--r3);padding:var(--cp-s) var(--cp);border:1px solid var(--border);box-shadow:var(--sh0)}
-.alt-row{display:flex;align-items:center;gap:var(--ig);padding:9px 0;border-bottom:1px solid var(--border)}
-.alt-row:last-child{border-bottom:none}
-.alt-av{width:34px;height:34px;border-radius:10px;font-size:11px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.alt-nm{font-size:var(--tx-sm);font-weight:600;color:var(--t1)}
-.alt-dt{font-size:var(--tx-xs);color:var(--t3)}
-.alt-p{margin-left:auto;font-size:var(--tx-md);font-weight:700;color:var(--t2);font-family:'Nunito',sans-serif}
-.act-row{display:flex;gap:var(--ig);flex-wrap:wrap;margin-top:var(--ig)}
+.sr-grid{display:grid;grid-template-columns:10fr 12fr;gap:var(--gg);align-items:start}
+.celeb{background:linear-gradient(135deg,#f8faff,#f0f7ff);border-radius:var(--r3);padding:16px;text-align:center;border:1.5px solid var(--bluebg);position:relative;margin-bottom:12px}
+.sr-av{width:95px;height:auto;margin:0 auto}
+.sr-allset{font-size:18px;font-weight:900;color:var(--t1);margin-top:8px}
+.sr-sub{font-size:12px;color:var(--t2)}
+
+.rec-card.rec-top{border:2.5px solid #10B981 !important;background:#F0FDF4 !important;padding:16px var(--ig);transform:scale(1.02);box-shadow:0 10px 30px rgba(16,185,129,0.1)}
+.rec-price{font-size:24px;font-weight:900;color:#10B981;background:none;padding:0}
+.best-match-badge{background:#10B981;color:#fff;padding:3px 12px;font-size:10px;font-weight:900;border-radius:20px;margin-bottom:8px;display:inline-block}
+
+.btn-book{height:60px;width:100%;font-size:18px;font-weight:900;box-shadow:0 12px 35px rgba(26,86,219,0.25);margin-top:20px}
+
+.nxt-strip{display:flex;justify-content:space-between;background:var(--white);padding:12px;border-radius:var(--r3);border:1px solid var(--border);margin:16px 0}
+.nxt-v{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;position:relative}
+.nxt-v:not(:last-child)::after{content:'';position:absolute;top:14px;right:-50%;width:100%;height:2px;background:var(--border);z-index:0}
+.nxt-v i{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-style:normal;font-weight:900;z-index:1}
+.nxt-v p{font-size:11px;font-weight:800;color:var(--t2)}
+
+.ap-card-box{background:linear-gradient(165deg,#1e293b,#0f172a);border-radius:var(--r3);padding:20px;color:#fff;margin-top:var(--gg);position:relative;overflow:hidden;box-shadow:var(--sh3)}
+.ap-card-box::after{content:'';position:absolute;top:-20%;right:-20%;width:200px;height:200px;background:radial-gradient(circle,rgba(59,130,246,0.2),transparent 70%);pointer-events:none}
+.hp-card{width:100%;max-width:320px;height:180px;background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);border-radius:18px;margin:12px auto;padding:24px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.hp-card-nm{font-size:14px;font-weight:800;letter-spacing:1px;text-transform:uppercase;opacity:0.9}
+.hp-chip{width:40px;height:30px;background:linear-gradient(135deg,#fcd34d,#fbbf24);border-radius:6px;margin-bottom:8px}
+.hp-num{font-family:'Courier New',monospace;font-size:18px;letter-spacing:2px}
+.btn-ap{background:#fff;color:#0f172a;border-radius:var(--r2);padding:12px;font-weight:900;font-size:14px;width:100%;margin-top:12px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.2)}
+
+.alts-collapsed{background:#fff;border:1px solid var(--border);border-radius:var(--r3);padding:10px;margin-top:12px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--blue)}
+.btn-sec{background:none;border:none;color:var(--t3);font-size:12px;font-weight:700;cursor:pointer;padding:8px;text-decoration:underline}
+
 
 /* ╔════════════════════════════════════════════════════
    ║  RESPONSIVE LAYOUT OVERRIDES
@@ -961,7 +952,7 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
   
   <nav class="hdr-mid">
     <a href="#" class="nav-lnk active"><i>🏠</i> Home</a>
-    <a href="#" class="nav-lnk"><i>📝</i> Blogs</a>
+    <a href="blogs.html" class="nav-lnk"><i>📝</i> Blogs</a>
     <a href="#" class="nav-lnk"><i>📞</i> Contact Us</a>
   </nav>
 
@@ -982,7 +973,7 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
     <button class="ham" onclick="toggleMenu(false)">✕</button>
   </div>
   <a href="#" class="drawer-lnk" onclick="toggleMenu(false)"><i>🏠</i> Home</a>
-  <a href="#" class="drawer-lnk" onclick="toggleMenu(false)"><i>📝</i> Blogs</a>
+  <a href="blogs.html" class="drawer-lnk"><i>📝</i> Blogs</a>
   <a href="#" class="drawer-lnk" onclick="toggleMenu(false)"><i>📞</i> Contact Us</a>
 </div>
 
@@ -1054,9 +1045,11 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
             <svg viewBox="0 0 160 180" xmlns="http://www.w3.org/2000/svg" class="av-orb-svg">
               <ellipse cx="80" cy="115" rx="52" ry="44" fill="#5B8DEF"/>
               <ellipse cx="80" cy="72" rx="42" ry="40" fill="#7BA7F7"/>
-              <ellipse cx="67" cy="65" rx="7" ry="8" fill="white"/><ellipse cx="93" cy="65" rx="7" ry="8" fill="white"/>
-              <circle cx="69" cy="67" r="3.5" fill="#1a3a6b"/><circle cx="95" cy="67" r="3.5" fill="#1a3a6b"/>
-              <circle cx="70" cy="65.5" r="1.2" fill="white"/><circle cx="96" cy="65.5" r="1.2" fill="white"/>
+              <g class="av-eyes" style="transform-origin: 80px 65px">
+                <ellipse cx="67" cy="65" rx="7" ry="8" fill="white"/><ellipse cx="93" cy="65" rx="7" ry="8" fill="white"/>
+                <circle cx="69" cy="67" r="3.5" fill="#1a3a6b"/><circle cx="95" cy="67" r="3.5" fill="#1a3a6b"/>
+                <circle cx="70" cy="65.5" r="1.2" fill="white"/><circle cx="96" cy="65.5" r="1.2" fill="white"/>
+              </g>
               <path d="M70 82 Q80 91 90 82" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
               <ellipse cx="58" cy="78" rx="6" ry="4" fill="#4a7be8" opacity="0.5"/><ellipse cx="102" cy="78" rx="6" ry="4" fill="#4a7be8" opacity="0.5"/>
               <text x="80" y="126" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Nunito">A</text>
@@ -1164,7 +1157,7 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
               <path d="M43 53 Q50 59 57 53" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/>
               <text x="50" y="82" text-anchor="middle" font-size="16" font-weight="bold" fill="white" font-family="Nunito">A</text>
             </svg>
-            <p class="ai-txt">I've identified your key symptoms. Based on the pattern, here's what it most likely means…</p>
+            <p class="ai-txt">Stomach pain that originates or centers in the upper-middle abdomen is  as a gnawing or burning sensation that fluctuates based on food intake. When the discomfort is sharper and localized to the lower right, clinical patterns often prioritize ruling out appendicitis, whereas cramping and bloating across the lower quadrants typically point toward more common digestive disruptions like irritable bowel syndrome or viral gastroenteritis.</p>
           </div>
           <div class="prog-card">
             <p class="prog-lbl">Analysis Progress</p>
@@ -1263,33 +1256,6 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
 <section class="screen" id="s5">
   <div class="pg">
 
-    <!-- ★ PATIENT SUMMARY BANNER -->
-    <div class="ps-banner">
-      <!-- Disease summary -->
-      <div class="ps-diag">
-        <p class="ps-diag-label">📋 Your Condition Summary</p>
-        <p class="ps-diag-name">Acidity / Gastritis</p>
-        <p class="ps-diag-sub">
-          You reported <strong>stomach pain, nausea, and bloating</strong> since morning —
-          consistent with mild Gastritis. No fever detected. Typically resolves
-          in <strong>2–3 days</strong> with correct treatment.
-          Confidence match: <strong style="color:var(--blue)">95%</strong>
-        </p>
-      </div>
-      <!-- Severity -->
-      <div class="ps-sev">
-        <span class="ps-sev-ico">🟡</span>
-        <span class="ps-sev-lbl">Severity</span>
-        <span class="ps-sev-val">Mild</span>
-      </div>
-      <!-- Recommended professional -->
-      <div class="ps-prof">
-        <span class="ps-prof-ico">👨‍⚕️</span>
-        <span class="ps-prof-lbl">See a</span>
-        <span class="ps-prof-val">General<br/>Physician</span>
-      </div>
-    </div>
-
     <div class="ca-grid">
       <div>
         <div class="tag-pill">COST ANALYZER &amp; SAVINGS</div>
@@ -1301,58 +1267,75 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
         </div>
         <!-- Budget Slider -->
         <div class="bgt-wrap">
-          <div class="bgt-top">
-            <div>
-              <p class="bgt-title">🎯 Set Your Budget</p>
-              <p class="bgt-note">Cards within budget are highlighted</p>
-            </div>
+          <div class="bgt-top" style="margin-bottom:8px">
+            <p class="bgt-title" style="margin:0">🎯 Set Your Budget</p>
             <div class="bgt-vbox">
-              <span class="bgt-val" id="bgt-val">₹700</span>
-              <span class="bgt-sub">budget</span>
+              <span class="bgt-val" id="bgt-val" style="font-size:18px">₹700</span>
             </div>
           </div>
           <input type="range" class="bgt-range" id="bgt-slider" min="100" max="1500" value="700" step="50" oninput="onBudget(this.value)"/>
-          <div class="bgt-mm"><span>₹100</span><span>₹1,500</span></div>
-          <div class="bgt-tags">
-            <button class="bgt-tag" onclick="setBudget(300)">₹300</button>
-            <button class="bgt-tag" onclick="setBudget(500)">₹500</button>
-            <button class="bgt-tag on" onclick="setBudget(700)">₹700</button>
-            <button class="bgt-tag" onclick="setBudget(1000)">₹1,000</button>
-            <button class="bgt-tag" onclick="setBudget(1500)">All</button>
+          <div class="bgt-tags" style="margin-top:10px; gap:6px; justify-content:flex-start">
+            <button class="bgt-tag" style="padding:4px 10px; font-size:11px" onclick="setBudget(300)">₹300</button>
+            <button class="bgt-tag" style="padding:4px 10px; font-size:11px" onclick="setBudget(500)">₹500</button>
+            <button class="bgt-tag on" style="padding:4px 10px; font-size:11px" onclick="setBudget(700)">₹700</button>
+            <button class="bgt-tag" style="padding:4px 10px; font-size:11px" onclick="setBudget(1000)">₹1,000</button>
           </div>
         </div>
         <div class="tip-b"><span>💡</span><span>Tip: You can save up to <strong>₹450</strong> by choosing smarter with Astikan.</span></div>
         <div class="cl-list" id="cl-list"></div>
       </div>
       <div class="ca-rp">
+        <div class="ps-banner" style="flex-direction:column; align-items:flex-start; gap:8px; padding:12px; margin-bottom:12px">
+          <div>
+            <p class="ps-diag-name" style="font-size:16px">Acidity / Gastritis</p>
+            <p class="ps-diag-sub">95% Confidence Match</p>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap">
+            <span class="ps-sev-val" style="font-size:10px">Mild Condition</span>
+            <span class="ps-conf" style="font-size:10px">95% Confident</span>
+            <span style="font-size:10px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:2px 8px; border-radius:20px">Consult: General Physician</span>
+          </div>
+        </div>
         <div class="save-box">
-          <p class="save-tt">Your Total Potential Savings</p>
-          <p class="save-amt" id="total-save">₹300 – ₹500</p>
-          <div class="piggy-row"><span style="font-size:24px">🐷</span><span>Smart patients save more!</span></div>
+          <p class="save-amt" id="total-save">₹250 – ₹300</p>
+          <p class="piggy-row">Potential savings with Astikan Smart-Care</p>
+          <div class="bgt-mini">
+            <span id="within-cnt">3 clinics within budget</span> • Max savings <strong id="max-sv">₹300</strong>
+          </div>
+          <p style="font-size:10px; opacity:0.7; margin-top:2px">Smart patients save more!</p>
         </div>
-        <div class="bgt-sum">
-          <div class="bgt-sum-row"><span class="bgt-sum-lbl">Within budget options</span><span class="bgt-sum-val" id="within-cnt">3 options</span></div>
-          <div class="bgt-sum-row" style="margin-bottom:0"><span class="bgt-sum-lbl">Max savings with Astikan</span><span class="bgt-sum-val" id="max-sv">₹400</span></div>
-          <div class="bs-bar"><div class="bs-fill" id="bs-fill" style="width:80%"></div></div>
+        
+        <div class="cmp-card" style="margin-top:16px">
+          <p style="font-size:10px; text-transform:uppercase; font-weight:900; color:var(--t3); margin-bottom:4px">Value Comparison</p>
+          <div class="cmp-best">
+            <span>Cheapest: <strong>₹300</strong></span>
+            <span>|</span>
+            <span>Best Value: <strong>₹450</strong></span>
+          </div>
         </div>
-        <div class="cmp-wrap">
+        <div class="cmp-wrap" style="display:none">
           <span class="lbl">Price Comparison</span>
           <table class="cmp-tbl">
             <thead><tr><th>Clinic</th><th>Price</th><th>Astikan Saves</th></tr></thead>
             <tbody id="cmp-body"></tbody>
           </table>
         </div>
-        <div class="ca-ai">
-          <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" width="44" style="flex-shrink:0">
+        <!-- AI Recommendation (Lower) -->
+        <div class="ca-ai" style="margin-top:16px; border:1.5px solid var(--bluebg); background:#fff">
+          <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" width="36" style="flex-shrink:0">
             <ellipse cx="50" cy="72" rx="33" ry="28" fill="#5B8DEF"/><ellipse cx="50" cy="45" rx="26" ry="25" fill="#7BA7F7"/>
-            <ellipse cx="41" cy="40" rx="5" ry="6" fill="white"/><ellipse cx="59" cy="40" rx="5" ry="6" fill="white"/>
-            <circle cx="42" cy="42" r="2.5" fill="#1a3a6b"/><circle cx="60" cy="42" r="2.5" fill="#1a3a6b"/>
+            <g class="av-eyes" style="transform-origin: 50px 41px">
+              <ellipse cx="42" cy="41" rx="4" ry="4.5" fill="white"/><ellipse cx="58" cy="41" rx="4" ry="4.5" fill="white"/>
+              <circle cx="43" cy="42" r="2" fill="#1a3a6b"/><circle cx="59" cy="42" r="2" fill="#1a3a6b"/>
+              <circle cx="43.5" cy="41" r="0.7" fill="white"/><circle cx="59.5" cy="41" r="0.7" fill="white"/>
+            </g>
             <path d="M43 53 Q50 59 57 53" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            <text x="50" y="82" text-anchor="middle" font-size="16" font-weight="bold" fill="white" font-family="Nunito">A</text>
           </svg>
-          <p class="ca-ai-msg">"CareWell Clinic — highly rated, nearest, and saves you the most with Astikan!"</p>
+          <div>
+            <p style="font-size:13px; margin:0"><strong style="color:var(--blue)">Best option: CareWell Clinic.</strong> Highly rated, nearest, and saves you the most with Astikan!</p>
+          </div>
         </div>
-        <button class="btn btn-p btn-wide" onclick="goTo(6)">See My Smart Plan →</button>
+        <button class="btn btn-p btn-wide" onclick="goTo(6)" style="height:64px; font-size:18px; font-weight:800; margin-top:16px; box-shadow:0 10px 30px rgba(26,86,219,0.3)">See My Smart Plan →</button>
       </div>
     </div>
   </div>
@@ -1362,66 +1345,103 @@ p{overflow-wrap:break-word} h1,h2,h3{overflow-wrap:break-word;font-family:'Nunit
 <section class="screen" id="s6">
   <div class="pg">
     <div class="sr-grid">
+      <!-- Left Column: Balanced Mascot & Health Card -->
       <div class="sr-left">
-        <div class="celeb">
-          <div class="conf" aria-hidden="true"><span>🎉</span><span>⭐</span><span>✨</span><span>🎊</span><span>💫</span><span>🌟</span><span>🎉</span><span>✨</span></div>
-          <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" class="sr-av">
+        <div class="celeb" style="padding:12px 14px">
+          <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" class="sr-av" style="margin-top:8px">
             <ellipse cx="100" cy="145" rx="65" ry="55" fill="#5B8DEF"/><ellipse cx="100" cy="90" rx="52" ry="50" fill="#7BA7F7"/>
-            <ellipse cx="84" cy="82" rx="8" ry="9" fill="white"/><ellipse cx="116" cy="82" rx="8" ry="9" fill="white"/>
-            <circle cx="86" cy="84" r="4" fill="#1a3a6b"/><circle cx="118" cy="84" r="4" fill="#1a3a6b"/>
-            <circle cx="87" cy="82" r="1.5" fill="white"/><circle cx="119" cy="82" r="1.5" fill="white"/>
+            <g class="av-eyes" style="transform-origin: 100px 82px">
+              <ellipse cx="84" cy="82" rx="8" ry="9" fill="white"/>
+              <ellipse cx="116" cy="82" rx="8" ry="9" fill="white"/>
+              <circle cx="86" cy="84" r="4" fill="#1a3a6b"/>
+              <circle cx="118" cy="84" r="4" fill="#1a3a6b"/>
+              <circle cx="87" cy="82" r="1.5" fill="white"/>
+              <circle cx="119" cy="82" r="1.5" fill="white"/>
+            </g>
             <path d="M83 102 Q100 118 117 102" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <ellipse cx="75" cy="95" rx="8" ry="5" fill="#4a7be8" opacity="0.5"/>
-            <ellipse cx="125" cy="95" rx="8" ry="5" fill="#4a7be8" opacity="0.5"/>
             <text x="100" y="158" text-anchor="middle" font-size="28" font-weight="bold" fill="white" font-family="Nunito">A</text>
-            <ellipse cx="42" cy="140" rx="14" ry="22" fill="#7BA7F7" transform="rotate(-20 42 140)"/>
-            <text x="35" y="130" font-size="18">👍</text>
-            <ellipse cx="158" cy="138" rx="14" ry="22" fill="#7BA7F7" transform="rotate(20 158 138)"/>
-            <text x="152" y="128" font-size="14">❤️</text>
           </svg>
           <h2 class="sr-allset">You're All Set!</h2>
-          <p class="sr-sub">Here's Your <strong>Smart Plan</strong></p>
-        </div>
-        <div class="nxt-card">
-          <span class="lbl">What Happens Next?</span>
-          <div class="nxt-steps">
-            <div class="nxt-s"><span class="nxt-n">1</span>Book Appointment</div>
-            <div class="nxt-s"><span class="nxt-n">2</span>Visit &amp; Get Treatment</div>
-            <div class="nxt-s"><span class="nxt-n">3</span>Feel Better &amp; Save Money</div>
+          <div style="background:rgba(59,130,246,0.05); padding:8px 12px; border-radius:10px; margin-top:10px; font-size:11px; color:var(--t2); border:1px solid var(--bluebg); font-style:italic; line-height:1.4">
+            "I've got your back! 💙 You'll feel better soon."
           </div>
         </div>
-        <div class="bye-box">
-          <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" width="42" style="flex-shrink:0">
-            <ellipse cx="50" cy="72" rx="33" ry="28" fill="#5B8DEF"/><ellipse cx="50" cy="45" rx="26" ry="25" fill="#7BA7F7"/>
-            <ellipse cx="41" cy="40" rx="5" ry="6" fill="white"/><ellipse cx="59" cy="40" rx="5" ry="6" fill="white"/>
-            <circle cx="42" cy="42" r="2.5" fill="#1a3a6b"/><circle cx="60" cy="42" r="2.5" fill="#1a3a6b"/>
-            <path d="M43 53 Q50 59 57 53" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            <text x="50" y="82" text-anchor="middle" font-size="16" font-weight="bold" fill="white" font-family="Nunito">A</text>
-          </svg>
-          <p class="bye-msg">"I've got your back, Rohit! 💙 You're going to feel better soon."</p>
+
+        <div class="ap-card-box">
+          <p style="font-size:16px; font-weight:900; letter-spacing:1px; margin-bottom:12px">Financial Support
+
+Need treatment now but cannot pay immediately?</p>
+          <p style="font-size:16px; font-weight:900; letter-spacing:1px; margin-bottom:12px"></p>
+          <p style="font-size:16px; font-weight:900; letter-spacing:1px; margin-bottom:12px">Astikan Health Pocket Card</p>
+          <div class="hp-card">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start">
+              <div>
+                <p class="hp-card-nm">Astikan Health</p>
+                <div class="hp-chip"></div>
+              </div>
+              <span style="font-size:12px; font-weight:900; opacity:0.6">POCKET CARD</span>
+            </div>
+            <div>
+              <p class="hp-num">**** **** 4290</p>
+              <div style="display:flex; justify-content:space-between; margin-top:8px; align-items:flex-end">
+                <span style="font-size:12px">ROHIT SHARMA</span>
+                <span style="font-size:18px; font-weight:900">Astikan</span>
+              </div>
+            </div>
+          </div>
+          <ul style="font-size:11px; margin-top:16px; display:flex; flex-direction:column; gap:8px; opacity:0.9">
+             <li style="display:flex; gap:8px">✨ <b>20% Instant Cashback</b> on every consultation.</li>
+             <li style="display:flex; gap:8px">✨ <b>24/7 Priority Access</b> to General Physicians.</li>
+             <li style="display:flex; gap:8px">✨ <b>Zero Convenience Fees</b> at network clinics.</li>
+          </ul>
+          <button class="btn-ap" onclick="alert('Application Started!')">Apply Now &amp; Save ₹1000+</button>
+          <p style="font-size:9px; text-align:center; margin-top:8px; opacity:0.6">Trusted by 50,000+ members</p>
         </div>
       </div>
+
+      <!-- Right Column: Decision Flow -->
       <div class="sr-rp">
-        <p class="rec-lbl">Recommended For You</p>
-        <div class="rec-card rec-top">
-          <div class="rec-av av1">CW</div>
-          <div class="rec-inf">
-            <p class="rec-nm">CareWell Clinic</p>
-            <p class="rec-sub">General Physician • 0.8 km</p>
-            <div style="font-size:11px;color:var(--t3)">⭐⭐⭐⭐⭐ (124 reviews)</div>
+        <span class="best-match-badge">⭐ BEST MATCH</span>
+        <div class="rec-card rec-top" style="margin-top:0; justify-content:space-between">
+          <div style="display:flex; align-items:center; gap:12px">
+            <div class="rec-av av1" style="width:50px; height:50px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; font-weight:800; background:linear-gradient(135deg,#1A56DB,#60A5FA); flex-shrink:0">CW</div>
+            <div class="rec-inf">
+              <p class="rec-nm" style="font-size:18px; font-weight:900; color:var(--t1)">CareWell Clinic</p>
+              <p class="rec-sub" style="font-size:13px; color:var(--t3)">General Physician • 0.8 km</p>
+              <div style="font-size:10px; color:#10B981; font-weight:800">⭐⭐⭐⭐⭐ (124 reviews)</div>
+            </div>
           </div>
-          <div class="rec-price">₹300</div>
+          <div style="text-align:right">
+            <div class="rec-price" style="font-size:24px; font-weight:900; color:#10B981; background:none; padding:0">₹300</div>
+            <div style="font-size:10px; background:#10B981; color:#fff; padding:2px 6px; border-radius:4px; font-weight:800; display:inline-block; margin-top:2px">SAVE ₹300</div>
+          </div>
         </div>
-        <div class="why-box"><p class="why-t">Why this?</p><p class="why-p">Good Rating • Nearest • Saves You ₹300 with Astikan</p></div>
-        <div class="alts">
-          <span class="lbl" style="margin-bottom:var(--ig)">Other Options</span>
-          <div class="alt-row"><div class="alt-av av2">CC</div><div><p class="alt-nm">CityCare Hospital</p><p class="alt-dt">1.2 km</p></div><span class="alt-p">₹500</span></div>
-          <div class="alt-row"><div class="alt-av av3">HP</div><div><p class="alt-nm">HealthPlus Clinic</p><p class="alt-dt">1.5 km</p></div><span class="alt-p">₹650</span></div>
+
+        <div style="padding:12px 0">
+          <p style="font-size:15px; color:var(--t2); line-height:1.4">Excellent choice: <b>nearest clinic</b>, <b>top-rated reviews</b>, and <b>matches your budget</b>.</p>
         </div>
-        <div class="act-row">
-          <button class="btn btn-o" onclick="goTo(1)">← Restart</button>
-          <button class="btn btn-g" onclick="alert('Saved!')">Save</button>
-          <button class="btn btn-p" onclick="alert('Booking…')">Book Now 🚀</button>
+
+        <button class="btn btn-p btn-book" onclick="alert('Proceeding to Secure Booking…')">Book Now 🚀</button>
+
+        <!-- 💰 Financial Support Card -->
+        
+
+
+
+
+        <div class="nxt-strip">
+          <div class="nxt-v"><i>1</i><p>Book</p></div>
+          <div class="nxt-v"><i>2</i><p>Visit</p></div>
+          <div class="nxt-v"><i>3</i><p>Recover</p></div>
+        </div>
+
+        <div class="alts-collapsed" onclick="this.innerHTML='CityCare Hospital & HealthPlus Clinic • ⌄'; this.style.color='var(--t3)';">
+           See 2 other clinics ⌄
+        </div>
+
+        <div class="act-row" style="margin-top:24px; justify-content:center; display:flex; gap:16px">
+          <button class="btn-sec" onclick="goTo(1)">← Restart Session</button>
+          <button class="btn-sec" onclick="alert('Report Downloaded!')">💾 Save Report</button>
         </div>
       </div>
     </div>
@@ -1592,19 +1612,27 @@ function startVU(){
 function onBudget(val){
   curBudget=parseInt(val);
   const el=document.getElementById('bgt-val');
+  const el2=document.getElementById('b8-val');
   if(el)el.textContent='₹'+curBudget.toLocaleString('en-IN');
-  const min=100,max=1500,pct=((curBudget-min)/(max-min)*100).toFixed(2)+'%';
-  const slider=document.getElementById('bgt-slider');
-  if(slider)slider.style.setProperty('--pct',pct);
+  if(el2)el2.textContent='₹'+curBudget.toLocaleString('en-IN');
+  
+  const min=100, max=1500;
+  const pct=Math.min(Math.max(((curBudget-min)/(max-min)*100),0),100).toFixed(2)+'%';
+  
+  document.querySelectorAll('.bgt-range').forEach(s=>{
+    s.value=curBudget;
+    s.style.setProperty('--pct',pct);
+  });
+  
   document.querySelectorAll('.bgt-tag').forEach(b=>{
     const bv=parseInt(b.textContent.replace(/[₹,]/g,''));
-    b.classList.toggle('on',(bv===curBudget)||(b.textContent==='All'&&curBudget>=1500));
+    b.classList.toggle('on', bv===curBudget);
   });
+  
   renderClinics(curData,curBudget);
   updateBudgetUI(curBudget);
 }
 function setBudget(val){
-  const s=document.getElementById('bgt-slider');if(s)s.value=val;
   onBudget(val);
 }
 function updateBudgetUI(budget){
@@ -1614,11 +1642,9 @@ function updateBudgetUI(budget){
   const w=document.getElementById('within-cnt');
   const ms=document.getElementById('max-sv');
   const ts=document.getElementById('total-save');
-  const bf=document.getElementById('bs-fill');
-  if(w)w.textContent=within.length+' option'+(within.length!==1?'s':'');
+  if(w)w.textContent=within.length+' clinics within budget';
   if(ms)ms.textContent='₹'+maxSave;
-  if(ts)ts.textContent=within.length?'₹'+minSave+' – ₹'+maxSave:'No options in budget';
-  if(bf)bf.style.width=Math.min((maxSave/500)*100,100)+'%';
+  if(ts)ts.textContent=within.length ? '₹'+minSave+' – ₹'+maxSave : 'No options in budget';
   renderCmpTable(curData,budget);
 }
 function renderClinics(data,budget){
@@ -1630,21 +1656,18 @@ function renderClinics(data,budget){
     const d=document.createElement('div');
     d.className='cl-card'+(c.best?' bv':'')+(over?' over':'');
     d.innerHTML=
-      '<div class="ov-tag">⚠️ Over budget</div>'+
-      (c.best?'<div class="bv-tag">BEST VALUE</div>':'')+
-      '<div class="cl-row">'+
+      (c.best?'<div class="bv-tag" style="position:absolute;top:0;left:0;border-radius:var(--r3) 0 var(--r3) 0">RECOMMENDED</div>':'')+
+      '<div class="cl-row" style="margin-top:'+(c.best?'18px':'0')+'">'+
         '<div class="cl-av '+c.cls+'">'+c.av+'</div>'+
         '<div class="cl-inf">'+
           '<p class="cl-nm">'+c.nm+'</p>'+
-          '<p class="cl-dt">'+c.dist+' • '+c.type+'</p>'+
-          '<div class="cl-st">'+c.stars+' ('+c.rev+')</div>'+
+          '<p class="cl-dt">'+c.dist+' • '+c.type+' • ⭐ '+c.stars+' ('+c.rev+')</p>'+
         '</div>'+
         '<div class="cl-price"><p class="pnew">₹'+c.pn+'</p><p class="pold">₹'+c.po+'</p></div>'+
       '</div>'+
-      '<div class="ast-row">'+
-        '<span style="font-size:15px;flex-shrink:0">💙</span>'+
-        '<p class="ast-tx">With <b>Astikan</b> you save <b>₹'+c.save+'</b> ('+savePct+'% off market price)<br/><span style="color:var(--t3);font-size:10px">'+c.why+'</span></p>'+
-        '<span class="ast-badge">Save ₹'+c.save+'</span>'+
+      '<div class="ast-row" style="margin-top:8px; padding-top:8px; border-top:1px solid #eee">'+
+        '<p class="ast-tx" style="font-size:12px">Save <b>₹'+c.save+'</b> with Astikan</p>'+
+        '<span class="ast-badge" style="margin-left:auto; background:'+(c.best?'#10B981':'var(--blue)')+'">Save ₹'+c.save+'</span>'+
       '</div>';
     list.appendChild(d);
   });
