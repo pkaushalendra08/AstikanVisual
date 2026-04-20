@@ -62,7 +62,10 @@ a{text-decoration:none; color:inherit}
 .nav-lnk i{font-style:normal;font-size:18px}
 .nav-lnk:hover{background:var(--bluebg);color:var(--blue)}
 .ham{display:none;width:40px;height:40px;border-radius:10px;background:var(--bluebg);color:var(--blue);font-size:20px;align-items:center;justify-content:center;cursor:pointer}
-@media(max-width:768px){.hdr-mid{display:none}.ham{display:flex}}
+@media(max-width:768px){
+  .hdr-mid, .hdr-auth-btns { display:none !important }
+  .ham { display:flex !important }
+}
 
 /* Mobile Drawer */
 .drawer{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--white);z-index:99999;box-shadow:-10px 0 40px rgba(0,0,0,0.1);padding:24px;display:flex;flex-direction:column;gap:20px;transition:right 0.4s cubic-bezier(0.4, 0, 0.2, 1)}
